@@ -23,7 +23,7 @@ if (isset($_POST['login'])) {
         if (password_verify($user_password, $user['user_password'])) {
             $_SESSION['user'] = $user['first_name'];
             $_SESSION['id_user'] = $user['id'];
-            header("Location: games_ps2/index.php");
+            header("Location: games_ps3/index.php");
             exit;
         } else {
             $message = "Incorrect password.";
@@ -39,12 +39,13 @@ if (isset($_POST['login'])) {
 <head>
     <meta charset="UTF-8">
     <title>Access to the App</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <script src="https://kit.fontawesome.com/9aa3d67044.js" crossorigin="anonymous"></script>
 </head>
 <body class="bg-light">
 <div class="container mt-5">
-    <h2 class="text-center mb-4">Welcome to the WebApp for managing video game collections!</h2>
+    <h3 class="text-center mb-4">Welcome to the WebApp for managing video game collections PS3!</h3>
     <?php if (isset($message)): ?>
         <div class="alert alert-info text-center"><?= $message ?></div>
     <?php endif; ?>
@@ -102,7 +103,7 @@ if (isset($_POST['login'])) {
             </div>
         </div>
         <div class="col-md-6 mb-6 d-flex justify-content-start">
-            <img src="img_entrance.jpg" alt="Imagen Login" style="width: 500px; height: 265px;">
+            <img src="ps3_slim.png" alt="Imagen Login" style="width: 500px; height: 265px;">
         </div>
         <p class="text-center mb-4"><i>Irkutsk, 2025</i></p>
     </div>

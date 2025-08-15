@@ -21,7 +21,7 @@ if ($id === null) {
     exit;
 }
 
-$sql = "DELETE FROM video_games_ps2 
+$sql = "DELETE FROM video_games
         WHERE id = ?
         AND id_user = ?";
 

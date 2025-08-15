@@ -9,8 +9,6 @@ if (!isset($_SESSION['id_user'])) {
     exit;
 }
 
-//$current_id_user = $_SESSION['id_user'];
-
 $title = $_POST['title'] ?? null;
 $specification = $_POST['specification'] ?? null;
 //$genders = $_POST['genders'] ?? null;
@@ -23,9 +21,8 @@ if ($title === null || $specification === null || $genders === null) {
     header('Location: index.php');
     exit;
 }
-//var_dump($title, $specification, $genders, $current_id_user);
 
-$sql = "INSERT INTO video_games_ps2 (title, specification, id_gender, id_user, creation_date)
+$sql = "INSERT INTO video_games (title, specification, id_gender, id_user, creation_date)
         VALUES (?, ?, ?, ?, NOW())";
 
 if ($stmt = $mysqli->prepare($sql)) {
@@ -37,10 +34,10 @@ if ($stmt = $mysqli->prepare($sql)) {
         $_SESSION['msg'] = "Record saved";
 
         if (isset($_FILES['image']) && $_FILES['image']['error'] == UPLOAD_ERR_OK) {
-            $allowed = array("image/jpg", "image/jpeg");
+            $allowed = array("image/jpg", "image/jpeg", "image/png");
             if (in_array($_FILES['image']['type'], $allowed)) {
-                $dir = "images";
-                $image_path = $dir . '/' . $id . '.jpg';
+                $dir = "images/ps3";
+                $image_path = $dir . '/' . $id . '.png';
             
                 if (!file_exists($dir)) {
                     mkdir($dir, 0777);
@@ -52,7 +49,7 @@ if ($stmt = $mysqli->prepare($sql)) {
                 }
             } else {
                 $_SESSION['color'] = "danger";
-                $_SESSION['msg'] .= "<br>Invalid image format. Only JPG and JPEG are allowed.";
+                $_SESSION['msg'] .= "<br>Invalid image format. Only JPG, JPEG and PNG are allowed.";
             }
         }
     } else {

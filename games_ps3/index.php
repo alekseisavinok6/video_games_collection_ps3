@@ -11,7 +11,7 @@ require '../database.php';
 $current_id_user = $_SESSION['id_user'];
 
 $sql_video_games = "SELECT v.id, v.title, v.specification, g.names AS genders 
-                   FROM video_games_ps2 AS v
+                   FROM video_games AS v
                    INNER JOIN genders AS g ON v.id_gender=g.id
                    WHERE v.id_user = ?";
 
@@ -27,7 +27,7 @@ if ($stmt = $mysqli->prepare($sql_video_games)) {
 }
 
 // Directory for images
-$dir = "images/";
+$dir = "images/ps3/";
 ?>
 
 <!doctype html>
@@ -35,14 +35,14 @@ $dir = "images/";
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>PS2 video game registration</title>
+    <title>PS3 video game collection</title>
     <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
     <link href="../resources/css/bootstrap.min.css" rel="stylesheet">
     <link href="../resources/css/all.min.css" rel="stylesheet">
 </head>
 <body class="d-flex flex-column h-100">
     <div class="container py-3">
-        <h2 class="text-center">PlayStation 2 video games <i class="fa-brands fa-playstation"></i></h2>
+        <h2 class="text-center">PlayStation 3 video games <i class="fa-brands fa-playstation"></i></h2>
         <hr>
         <div class="alert alert-light text-start">
             Active session for: <strong><?= $_SESSION['user'] ?></strong> with <i>id</i>: <?= $_SESSION['id_user'] ?>
@@ -66,10 +66,6 @@ $dir = "images/";
                 <i class="fa-solid fa-xmark"></i> Log out</a>
             </div>
             <div class="col-auto">
-                <a href="../games_xbox/index.php" 
-                class="btn btn-secondary"
-                style="--bs-btn-padding-y: .16rem; --bs-btn-padding-x: .5rem;">
-                <i class="fa-solid fa-arrow-right"></i> Go to Xbox</a>
                 <a href="#" 
                 class="btn btn-primary"
                 style="--bs-btn-padding-y: .16rem; --bs-btn-padding-x: .5rem;" 
@@ -77,7 +73,6 @@ $dir = "images/";
                 data-bs-target="#new_window_1">
                 <i class="fa-solid fa-circle-plus"></i> Add new</a>
             </div>
-
         </div>
 
         <table class="table table-sm table-striped table-hover mt-4">
@@ -93,27 +88,27 @@ $dir = "images/";
             </thead>
 
             <tbody>
-                <?php while ($row_video_games_ps2 = $video_games->fetch_assoc()) { ?>
+                <?php while ($row_video_games = $video_games->fetch_assoc()) { ?>
                     <tr>
-                        <td><?= $row_video_games_ps2['id']; ?></td>
-                        <td><?= $row_video_games_ps2['title']; ?></td>
-                        <td><?= $row_video_games_ps2['specification']; ?></td>
-                        <td><?= $row_video_games_ps2['genders']; ?></td>
-                        <td><img src="<?= $dir . $row_video_games_ps2['id'] . '.jpg?n=' . time(); ?>" width="100"></td>
+                        <td><?= $row_video_games['id']; ?></td>
+                        <td><?= $row_video_games['title']; ?></td>
+                        <td><?= $row_video_games['specification']; ?></td>
+                        <td><?= $row_video_games['genders']; ?></td>
+                        <td><img src="<?= $dir . $row_video_games['id'] . '.png?n=' . time(); ?>" width="100"></td>
                         <td>
                             <a href="#" 
                             class="btn btn-warning" 
                             style="--bs-btn-padding-y: .10rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .90rem;" 
                             data-bs-toggle="modal" 
                             data-bs-target="#edit_window_1" 
-                            data-bs-id="<?= $row_video_games_ps2['id']; ?>">
+                            data-bs-id="<?= $row_video_games['id']; ?>">
                             <i class="fa-regular fa-pen-to-square"></i> Edit</a>
                             <a href="#" 
                             class="btn btn-sm btn-danger"
                             style="--bs-btn-padding-y: .10rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .90rem;"
                             data-bs-toggle="modal" 
                             data-bs-target="#delete_window_1" 
-                            data-bs-id="<?= $row_video_games_ps2['id']; ?>">
+                            data-bs-id="<?= $row_video_games['id']; ?>">
                             <i class="fa-regular fa-trash-can"></i> Delete</a>
                         </td>
                     </tr>
@@ -124,7 +119,7 @@ $dir = "images/";
 
     <footer class="footer mt-auto py-3 bg-light">
         <div class="container">
-            <p class="text-center"><i>Video game registration - 2025</i></a> <i class="fa-solid fa-gamepad"></i></p>
+            <p class="text-center"><i>Video game collection - 2025</i></a> <i class="fa-solid fa-gamepad"></i></p>
         </div>
     </footer>
 
@@ -197,7 +192,7 @@ $dir = "images/";
                     inputSpecification.value = data.data.specification;
                     inputGenders.value = data.data.id_genders;
                     // Load updated image without cache
-                    image.src = '<?= $dir ?>' + data.data.id + '.jpg?' + new Date().getTime();
+                    image.src = '<?= $dir ?>' + data.data.id + '.png?' + new Date().getTime();
                 } else {
                     alert('Error getting data from the video game: ' + (data.message || 'Data not available.'));
                     editWindow.querySelector('.btn-close').click(); 

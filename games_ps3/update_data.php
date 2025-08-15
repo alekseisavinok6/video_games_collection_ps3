@@ -24,7 +24,7 @@ if ($id === null || $title === null || $specification === null || $genders === n
     exit;
 }
 
-$sql = "UPDATE video_games_ps2 
+$sql = "UPDATE video_games
         SET title = ?, specification = ?, id_gender = ? 
         WHERE id = ?
         AND id_user = ?";
@@ -36,10 +36,10 @@ $sql = "UPDATE video_games_ps2
         $_SESSION['msg'] = "Updated record.";
 
         if (isset($_FILES['image']) && $_FILES['image']['error'] == UPLOAD_ERR_OK) {
-            $allowed = array("image/jpg", "image/jpeg");
+            $allowed = array("image/jpg", "image/jpeg", "image/png");
             if (in_array($_FILES['image']['type'], $allowed)) {
-                $dir = "images";
-                $image_path = $dir . '/' . $id . '.jpg';
+                $dir = "images/ps3";
+                $image_path = $dir . '/' . $id . '.png';
 
                 if (!file_exists($dir)) {
                     mkdir($dir, 0777, true);
