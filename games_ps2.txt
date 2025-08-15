@@ -1,0 +1,4 @@
+('Uncharted 3: Drake's Deception', 'A third-person action game where players embark on an exciting journey in search of ancient treasures.', 2)
+('Final Fantasy XIII', 'Turn-based RPG with a rich narrative and memorable characters in the huge magical world.', 3)
+('Call of Duty: Black Ops', 'A first-person shooter with a gripping plot set during the Cold War.', 7)
+('Resident Evil 5', 'Survival horror with intense action and an immersive narrative.', 8)
