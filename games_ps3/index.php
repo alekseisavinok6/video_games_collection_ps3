@@ -67,7 +67,7 @@ $dir = "images/ps3/";
             </div>
             <div class="col-auto">
                 <a href="#" 
-                class="btn btn-primary"
+                class="btn btn-danger"
                 style="--bs-btn-padding-y: .16rem; --bs-btn-padding-x: .5rem;" 
                 data-bs-toggle="modal" 
                 data-bs-target="#new_window_1">
@@ -104,7 +104,7 @@ $dir = "images/ps3/";
                             data-bs-id="<?= $row_video_games['id']; ?>">
                             <i class="fa-regular fa-pen-to-square"></i> Edit</a>
                             <a href="#" 
-                            class="btn btn-sm btn-danger"
+                            class="btn btn-sm btn-secondary mt-1"
                             style="--bs-btn-padding-y: .10rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .90rem;"
                             data-bs-toggle="modal" 
                             data-bs-target="#delete_window_1" 

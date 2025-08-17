@@ -11,8 +11,9 @@
             <div class="modal-footer">
                 <form action="delete_data.php" method="post">
                     <input type="hidden" name="id" id="id">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-danger">Delete</button>
+                    <button type="button" class="btn btn-light" 
+                    style="--bs-btn-padding-y: .10rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .95rem;" data-bs-dismiss="modal">No</button>
+                    <button type="submit" class="btn btn-secondary" style="--bs-btn-padding-y: .10rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .95rem;">Yes</button>
                 </form>
             </div>
         </div>
