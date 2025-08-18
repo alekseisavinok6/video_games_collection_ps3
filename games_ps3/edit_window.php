@@ -34,7 +34,7 @@
                     </div>
                     <div class="d-flex justify-content-end pt2">
                         <button type="button" class="btn btn-light me-1" style="--bs-btn-padding-y: .10rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .95rem;" data-bs-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-secondary ms-1" style="--bs-btn-padding-y: .10rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .95rem;"><i class="fa-regular fa-floppy-disk"></i> Save</button>
+                        <button type="submit" class="btn btn-light ms-1" style="--bs-btn-padding-y: .10rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .95rem;"><i class="fa-regular fa-floppy-disk"></i> Save</button>
                     </div>
                 </form>
             </div>

@@ -52,7 +52,7 @@ if (isset($_POST['login'])) {
     <div class="row justify-content-start">
         <div class="col-md-3">
             <div class="card shadow">
-                <div class="card-header bg-danger text-white">
+                <div class="card-header bg-secondary text-white">
                     <i class="fa-solid fa-user-plus"></i> Record
                 </div>
                 <div class="card-body">
@@ -73,7 +73,7 @@ if (isset($_POST['login'])) {
                             <label>Password</label>
                             <input type="password" name="user_password" class="form-control" required>
                         </div>
-                        <button type="submit" name="register" class="btn btn-danger w-100">
+                        <button type="submit" name="register" class="btn btn-secondary w-100">
                             Register
                         </button>
                     </form>
@@ -82,7 +82,7 @@ if (isset($_POST['login'])) {
         </div>
         <div class="col-md-3">
             <div class="card shadow">
-                <div class="card-header bg-danger text-white">
+                <div class="card-header bg-secondary text-white">
                     <i class="fa-solid fa-right-to-bracket"></i> Login
                 </div>
                 <div class="card-body">
@@ -95,7 +95,7 @@ if (isset($_POST['login'])) {
                             <label>Password</label>
                             <input type="password" name="user_password" class="form-control" required>
                         </div>
-                        <button type="submit" name="login" class="btn btn-danger w-100">
+                        <button type="submit" name="login" class="btn btn-secondary w-100">
                             Login
                         </button>
                     </form>

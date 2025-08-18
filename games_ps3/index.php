@@ -67,7 +67,7 @@ $dir = "images/ps3/";
             </div>
             <div class="col-auto">
                 <a href="#" 
-                class="btn btn-danger"
+                class="btn btn-secondary"
                 style="--bs-btn-padding-y: .16rem; --bs-btn-padding-x: .5rem;" 
                 data-bs-toggle="modal" 
                 data-bs-target="#new_window_1">
@@ -94,17 +94,17 @@ $dir = "images/ps3/";
                         <td><?= $row_video_games['title']; ?></td>
                         <td><?= $row_video_games['specification']; ?></td>
                         <td><?= $row_video_games['genders']; ?></td>
-                        <td><img src="<?= $dir . $row_video_games['id'] . '.png?n=' . time(); ?>" width="100"></td>
+                        <td><img src="<?= $dir . $row_video_games['id'] . '.png?n=' . time(); ?>" width="120"></td>
                         <td>
                             <a href="#" 
-                            class="btn btn-warning" 
+                            class="btn btn-light" 
                             style="--bs-btn-padding-y: .10rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .90rem;" 
                             data-bs-toggle="modal" 
                             data-bs-target="#edit_window_1" 
                             data-bs-id="<?= $row_video_games['id']; ?>">
                             <i class="fa-regular fa-pen-to-square"></i> Edit</a>
                             <a href="#" 
-                            class="btn btn-sm btn-secondary mt-1"
+                            class="btn btn-sm btn-light mt-1"
                             style="--bs-btn-padding-y: .10rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .90rem;"
                             data-bs-toggle="modal" 
                             data-bs-target="#delete_window_1" 
